@@ -1,0 +1,44 @@
+.textContainer {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+  }
+
+
+.outertextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 60%;
+    width: 5%;
+  }
+
+
+.textContainerUser {
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding-left: 10px;
+    color: white;
+    display: flex;
+    max-width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+  }
+  
+.textContainerText {
+    width: 100%;
+    letter-spacing: 0;
+    float: left;
+    font-size: 1.1em;
+    word-wrap: break-word;
+    margin: 4px;
+    padding-top: 4px; 
+    padding-bottom: 4px; 
+  }
+
+.backgroundRed {
+    background: #ff1a1a;
+  }

@@ -6,6 +6,7 @@ import "./Chat.css"
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 import Messages from "../Messages/Messages";
+import TextContainer from "../TextContainer/TextContainer";
 
 let socket;
 
@@ -15,6 +16,7 @@ const Chat = ({ location }) => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
     const ENDPOINT = 'localhost:5000';
+    const [users, setUsers] = useState([]); //current users in chats
 
     useEffect(()=>{
         const {name='', room=''} = queryString.parse(location.search);
@@ -39,6 +41,21 @@ const Chat = ({ location }) => {
         console.log(`updating current array of messages!`);
      }, [messages]);
 
+     useEffect(()=>{
+        socket.on('roomData', (roomData) => {
+            // console.log(roomData.room);
+            // console.log(` - room`);
+            // console.log(room);
+            // console.log(` - room`);
+            if(room == roomData.room){
+                setUsers(roomData.users);
+                console.log("rooms are equal!");
+            }
+        });
+        console.log(users);
+        // console.log(`updating users state!`);
+
+     }, [users, room]);
 
 
     const sendMessage = (event) => {
@@ -58,7 +75,7 @@ const Chat = ({ location }) => {
                 <Messages messages = {messages} name = {name}/>
                 <Input message = {message} setMessage = {setMessage}  sendMessage = {sendMessage} />
             </div>
-            {/* <TextContainer users = {users} /> */}
+            <TextContainer users = {users} />
         </div>
     );
 };
