@@ -10,17 +10,17 @@
     flex-direction: column;
     justify-content: start;
     background: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 0px;
     height: 60%;
-    width: 5%;
-    margin-left:-70px;
+    max-width: 8%;
+    margin-left:-8%;
     z-index: 0;
     transition: margin .5s;
   }
 
 
 .textContainerUser {
-    background: #F3F3F3;
+    background: #666666;
     border-radius: 8px;
     padding-left: 10px;
     color: white;
@@ -36,6 +36,7 @@
     letter-spacing: 0;
     float: left;
     font-size: 1.1em;
+    font-family: Helvetica;
     word-wrap: break-word;
     margin: 4px;
     padding-top: 4px; 
@@ -48,13 +49,31 @@
 
 .openTextContainer{
   display: flex;
-  background: #aaaaaa;
+  /* background: #aaaaaa; */
+  background: #b1b1b1;
+  color: white;
   padding-left:5px;
   padding-right:5px;
   height: 60%;
   align-items: center;
+  word-wrap: break-word;
+  max-width: 100%;
+  border-radius: 0px 4px 4px 0;
 }
 
 .outertextContainer.is-open {
   margin-left: 0;
+}
+
+.usersInfo{
+  background: #0cd115;
+  border-radius: 0px;
+  padding-left: 10px;
+  color: white;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+  min-height: 60px;
 }
