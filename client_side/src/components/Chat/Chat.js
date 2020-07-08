@@ -15,7 +15,8 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
-    const ENDPOINT = 'localhost:5000';
+    // const ENDPOINT = 'localhost:5000';
+    const ENDPOINT = 'https://git.heroku.com/cool-chat-react-express-app.git';
     const [users, setUsers] = useState([]); //current users in chats
 
     useEffect(()=>{

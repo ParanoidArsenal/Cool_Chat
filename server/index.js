@@ -20,9 +20,8 @@ server.listen(PORT, () => console.log(`Server has been started! (Port ${PORT})`)
 // app.use(function (request, response) {
 //     response.sendFile(path.resolve(__dirname + "/../client_side/src/index.html"));
 //   });
-
-app.use(router);
 app.use(cors());
+app.use(router);
 
 io.on('connection', socket => {
     console.log(`new listener = ${socket}`);
